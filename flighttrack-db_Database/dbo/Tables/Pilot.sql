@@ -1,0 +1,25 @@
+﻿CREATE TABLE [dbo].[Pilot] (
+    [PilotID]             INT            IDENTITY (1, 1) NOT NULL,
+    [PilotCode]           VARCHAR (50)   NULL,
+    [PilotName]           VARCHAR (200)  NULL,
+    [PhoneIdType]         VARCHAR (50)   NULL,
+    [PhoneID]             VARCHAR (50)   NULL,
+    [SimNumber]           VARCHAR (50)   NULL,
+    [AnID]                VARCHAR (50)   NULL,
+    [PilotUserName]       NVARCHAR (250) NULL,
+    [StartingFlyWayPoint] INT            NULL,
+    [IsShared]            BIT            CONSTRAINT [DF_Pilot_IsShared] DEFAULT ((1)) NOT NULL,
+    [Created]             DATETIME       CONSTRAINT [DF_Pilot_Created] DEFAULT (getdate()) NULL,
+    [NameFirst]           NVARCHAR (100) NULL,
+    [NameLast]            NVARCHAR (100) NULL,
+    [BaseAirportID]       INT            NULL,
+    [BaseAirport]         NVARCHAR (10)  NULL,
+    [SearchHint]          VARCHAR (50)   NULL,
+    [CertType]            VARCHAR (50)   NULL,
+    [PilotGuid]           VARCHAR (36)   CONSTRAINT [DF_Pilot_Guid] DEFAULT (CONVERT([varchar](36),newid())) NULL,
+    [TimeForward]         INT            CONSTRAINT [DF_Pilot_TimeForward] DEFAULT ((0)) NOT NULL,
+    [LandingsForward]     INT            CONSTRAINT [DF_Pilot_LandingsForward] DEFAULT ((0)) NOT NULL,
+    CONSTRAINT [PK_Pilot] PRIMARY KEY CLUSTERED ([PilotID] ASC),
+    CONSTRAINT [uniquePilot] UNIQUE NONCLUSTERED ([PilotCode] ASC, [SimNumber] ASC)
+);
+

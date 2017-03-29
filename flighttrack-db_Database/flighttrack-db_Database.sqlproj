@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>flighttrack_db_Database</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{1ceb42b3-d2f1-4ab6-aaf4-81e7b4917a90}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>flighttrack_db_Database</RootNamespace>
+    <AssemblyName>flighttrack_db_Database</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Views\" />
+    <Folder Include="Security\" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="h\" />
+    <Folder Include="h\Stored Procedures\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\AircraftPilot.sql" />
+    <Build Include="dbo\Tables\AirportCoordinates.sql" />
+    <Build Include="dbo\Tables\AppLog.sql" />
+    <Build Include="dbo\Tables\AppProperties.sql" />
+    <Build Include="dbo\Tables\AppStatus.sql" />
+    <Build Include="dbo\Tables\CommunicationLog.sql" />
+    <Build Include="dbo\Tables\CrashLog.sql" />
+    <Build Include="dbo\Tables\DimAcftMMS.sql" />
+    <Build Include="dbo\Tables\DimAcftRegistry.sql" />
+    <Build Include="dbo\Tables\DimAircraftRemote.sql" />
+    <Build Include="dbo\Tables\DimArea.sql" />
+    <Build Include="dbo\Tables\Flight.sql" />
+    <Build Include="dbo\Tables\FlightAction.sql" />
+    <Build Include="dbo\Tables\FlightController.sql" />
+    <Build Include="dbo\Tables\FlightState.sql" />
+    <Build Include="dbo\Tables\GpsLocation.sql" />
+    <Build Include="dbo\Tables\Pilot.sql" />
+    <Build Include="dbo\Tables\Request.sql" />
+    <Build Include="dbo\Tables\Response.sql" />
+    <Build Include="dbo\Tables\SearchRequest.sql" />
+    <Build Include="dbo\Tables\UserProfile.sql" />
+    <Build Include="dbo\Tables\webpages_Membership.sql" />
+    <Build Include="dbo\Tables\webpages_OAuthMembership.sql" />
+    <Build Include="dbo\Tables\webpages_Roles.sql" />
+    <Build Include="dbo\Tables\webpages_UsersInRoles.sql" />
+    <Build Include="dbo\Views\vAircraftPilot.sql" />
+    <Build Include="dbo\Views\vFlightAcftPilot.sql" />
+    <Build Include="dbo\Views\vListAircraft.sql" />
+    <Build Include="dbo\Views\vListAirport.sql" />
+    <Build Include="dbo\Views\vListPilot.sql" />
+    <Build Include="dbo\Views\vPilotLogBook.sql" />
+    <Build Include="dbo\Views\vVisualPilotLogBook.sql" />
+    <Build Include="dbo\Views\vVisualPilotLogDestinations.sql" />
+    <Build Include="Security\gapilot.sql" />
+    <Build Include="Security\RoleMemberships.sql" />
+    <Build Include="dbo\Functions\fVisualPilotLogBook.sql" />
+    <Build Include="dbo\Functions\fVisualPilotLogDestinations.sql" />
+    <Build Include="dbo\Stored Procedures\update_PilotUserName.sql" />
+    <Build Include="dbo\Stored Procedures\update_PilotGuid.sql" />
+    <Build Include="dbo\Stored Procedures\update_Pilot.sql" />
+    <Build Include="dbo\Stored Procedures\update_FlightStatus.sql" />
+    <Build Include="dbo\Stored Procedures\update_FlightPost.sql" />
+    <Build Include="dbo\Stored Procedures\update_FlightAttrib.sql" />
+    <Build Include="dbo\Stored Procedures\update_CommunicationLog.sql" />
+    <Build Include="dbo\Stored Procedures\spIsArea.sql" />
+    <Build Include="dbo\Stored Procedures\set_PilotUserName.sql" />
+    <Build Include="dbo\Stored Procedures\set_Location.sql" />
+    <Build Include="dbo\Stored Procedures\set_FlightController.sql" />
+    <Build Include="dbo\Stored Procedures\set_AppStatus.sql" />
+    <Build Include="dbo\Stored Procedures\insert_CrashLog.sql" />
+    <Build Include="dbo\Stored Procedures\insert_CommunicationLog.sql" />
+    <Build Include="dbo\Stored Procedures\GetLastWayPoint.sql" />
+    <Build Include="dbo\Stored Procedures\get_Response.sql" />
+    <Build Include="dbo\Stored Procedures\get_PilotP.sql" />
+    <Build Include="dbo\Stored Procedures\get_PilotID.sql" />
+    <Build Include="dbo\Stored Procedures\get_LastWayPoint.sql" />
+    <Build Include="dbo\Stored Procedures\get_isArea.sql" />
+    <Build Include="dbo\Stored Procedures\create_Pilot.sql" />
+    <Build Include="dbo\Stored Procedures\create_Flight.sql" />
+    <Build Include="dbo\Stored Procedures\create_Aicraft.sql" />
+    <Build Include="h\Stored Procedures\populate_data.sql" />
+    <Build Include="h\Stored Procedures\helper_get_PilotP.sql" />
+    <Build Include="h\Stored Procedures\helper_force_ref_integrity.sql" />
+    <Build Include="Security\h.sql" />
+  </ItemGroup>
+</Project>
