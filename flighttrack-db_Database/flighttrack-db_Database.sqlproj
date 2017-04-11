@@ -67,6 +67,7 @@
     <Folder Include="dbo\Stored Procedures\" />
     <Folder Include="h\" />
     <Folder Include="h\Stored Procedures\" />
+    <Folder Include="Scripts" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\AircraftPilot.sql" />
@@ -102,8 +103,6 @@
     <Build Include="dbo\Views\vPilotLogBook.sql" />
     <Build Include="dbo\Views\vVisualPilotLogBook.sql" />
     <Build Include="dbo\Views\vVisualPilotLogDestinations.sql" />
-    <Build Include="Security\gapilot.sql" />
-    <Build Include="Security\RoleMemberships.sql" />
     <Build Include="dbo\Functions\fVisualPilotLogBook.sql" />
     <Build Include="dbo\Functions\fVisualPilotLogDestinations.sql" />
     <Build Include="dbo\Stored Procedures\update_PilotUserName.sql" />
@@ -133,5 +132,14 @@
     <Build Include="h\Stored Procedures\helper_get_PilotP.sql" />
     <Build Include="h\Stored Procedures\helper_force_ref_integrity.sql" />
     <Build Include="Security\h.sql" />
+    <Build Include="dbo\Tables\DimCompany.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="flighttrack-db_Database.refactorlog" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Scripts\DataDimCompany.sql" />
+    <None Include="Scripts\CreateFKConstr.sql" />
+    <None Include="Scripts\DropFKConstr.sql" />
   </ItemGroup>
 </Project>
