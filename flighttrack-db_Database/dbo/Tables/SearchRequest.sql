@@ -9,6 +9,8 @@
     [AcftNumLocal] VARCHAR (50) NULL,
     [PilotCode]    VARCHAR (50) NULL,
     [FlightID]     INT          NULL,
-    [AreaID]       INT          NULL
+    [AreaID]       INT          NULL, 
+    [CompanyID] INT NULL, 
+    [CompanyName] VARCHAR(100) NULL
 );
 
