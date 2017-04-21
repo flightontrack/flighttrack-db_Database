@@ -240,3 +240,5 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+/flighttrack-db_Database/flighttrack-db_Database.jfm
+/flighttrack-db_Database/flighttrack-db_Database.refactorlog
