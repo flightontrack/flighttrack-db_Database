@@ -10,7 +10,7 @@
     [PilotCode]    VARCHAR (50) NULL,
     [FlightID]     INT          NULL,
     [AreaID]       INT          NULL, 
-    [CompanyID] INT NULL, 
-    [CompanyName] VARCHAR(100) NULL
+    [GroupID] INT NULL, 
+    [GroupName] VARCHAR(100) NULL
 );
 
