@@ -141,5 +141,6 @@
     <None Include="Scripts\DataDimAcrftGroup.sql" />
     <None Include="Scripts\CreateFKConstr.sql" />
     <None Include="Scripts\DropFKConstr.sql" />
+    <None Include="Scripts\DimArea.sql" />
   </ItemGroup>
 </Project>
