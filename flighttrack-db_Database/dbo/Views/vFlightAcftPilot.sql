@@ -1,4 +1,5 @@
 ﻿
+
 CREATE  VIEW [dbo].[vFlightAcftPilot]
 --WITH SCHEMABINDING
 AS
@@ -27,7 +28,7 @@ SELECT f.FlightID
 	,Pilot=coalesce(p.PilotName,left(p.PilotCode,3)+'-....'+right(p.PilotCode,3))
 	,ap.AcftName
 	,isPositionCurrent=iif(datediff(ss,f.Updated,getdate())<=6,1,0)
-	,isInFlight=iif(FlightStateId=3 AND datediff(hh,f.FlightTimeStart,getdate())<5,1,0)
+	,isInFlight=iif(FlightStateId=3 AND datediff(ss,f.Updated,getdate())<=60,1,0)
 	,UpdateDelay = datediff(ss,f.Updated,getdate())
 	--,ot.AltitudeFt
 	,l.AltitudeFt

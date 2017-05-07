@@ -2,7 +2,7 @@
 (
 	@GpsLocationID int,
 	@AreaID int,
-	@Radius char(2)=null
+	@Radius varchar(2)=null
 )
 AS
 	--DECLARE @Result int
